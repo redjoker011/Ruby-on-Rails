@@ -1,0 +1,13 @@
+1. Rescue specific errors. Avoid rescuing StandardError. Don’t rescue Exception.
+ref: https://andycroll.com/ruby/rescue-specific-errors-avoid-standarderror-do-not-rescue-exception/?utm_source=rubyweekly&utm_medium=email
+
+2. Command Pattern
+ref: http://www.sihui.io/design-pattern-command/?utm_source=rubyweekly&utm_medium=email
+
+3. Decorator Patter
+ref: http://www.sihui.io/design-pattern-decorator/
+
+4. Code Blocks, Procs, Lambdas, and Closures in Ruby
+ref: http://www.sihui.io/procs-in-ruby-p1/
+ref: http://www.sihui.io/procs-in-ruby-p2/
+ref: http://www.sihui.io/procs-in-ruby-p3/

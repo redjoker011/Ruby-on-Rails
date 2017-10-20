@@ -1,0 +1,34 @@
+refs: https://www.speedshop.co/2017/10/12/appserver.html
+
+1. run atleast 3 process per server
+   Puma
+    $ puma -w 3 # Command-line option
+    workers 3 # in your config/puma.rb
+
+    # Unicorn
+    worker_processes 3 # config/unicorn.rb
+
+    # Passenger (nginx/Standalone)
+    # Passenger can automatically scale workers up and down - I don't find this
+    # super useful. Instead, just run a constant number by setting the max and min:
+    passenger_max_pool_size 3;
+    passenger_min_instances 3;
+
+    # or using env variables
+    workers Integer(ENV["WEB_CONCURRENCY"] || 3)
+
+2. set thred count to 5
+    # unicorn has no threads
+
+    # Puma. Again, I don't really use the "automatic" spin-up/spin-down features, so
+    # I set the max and min to the same number.
+    $ puma -t 5:5 # Command-line option
+    threads 5, 5 # in your config/puma.rb
+
+    # Passenger (nginx/Standalone)
+    passenger_concurrency_model thread;
+    passenger_thread_count 5;
+
+3. Application Container
+    # one application standard: 4vCPU/ 4gb of RAM with 6 ruby process
+    # or *vCPUs and 2GB of RAM

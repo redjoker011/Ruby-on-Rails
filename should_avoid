@@ -1,0 +1,4 @@
+# Methods Frequently Change
+ref: http://www.sihui.io/design-pattern-command/?utm_source=rubyweekly&utm_medium=email
+
+A method that requires frequent changes is a method you need to update often and each time you update a piece of code is an opportunity to introduce new bugs to the system. When the method also knows a tone, a.k.a. it’s long, the chances of messing it up when updating increases significantly. That’s the reasoning behind a design principle we talked about earlier––encapsulate what varies.
